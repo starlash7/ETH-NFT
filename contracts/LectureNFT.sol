@@ -9,4 +9,10 @@ contract LectureNFT is ERC721 {
             _safeMint(msg.sender, i + 1);
         }
     }
+
+    function setBaseURI(string memory uri) external onlyOwner{}
+
+    function _baseURI() internal view override returns(string memory) {
+        return "ipfs://Qmb64RAbojNAHfTWhkWMaP2JYZRaZwPr26ZTEhC9hGePDv";
+    }
 }
