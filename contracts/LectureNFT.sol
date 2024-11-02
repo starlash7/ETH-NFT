@@ -42,4 +42,8 @@ contract LectureNFT is ERC721, Ownable {
             abi.encodePacked(baseURI, tokenMetadataNo[tokenId].toString())
         );
     }
+
+    function withdraw() external onlyOwner {
+        payable(msg.sender).tranfer(address(this).balance);
+    }
 } 
